@@ -1,0 +1,36 @@
+BootStrap: library
+From: ubuntu:20.04
+
+%post
+    apt-get install -y software-properties-common
+    add-apt-repository universe
+    apt-get update -y
+
+    apt-get install -y wget gcc g++ gfortran make perl fftw3-dev libgsl-dev liblapack-dev libblas-dev
+
+    mkdir /download
+
+    cd /download
+    wget --output-document libxc.tar.gz "https://www.tddft.org/programs/libxc/down.php?file=5.1.3/libxc-5.1.3.tar.gz"
+    tar xf libxc.tar.gz
+    cd libxc-5.1.3
+    ./configure --disable-dependency-tracking --prefix=/opt/libxc
+    make
+    make install
+
+    cd /download
+    wget --output-document octopus.tar.gz "https://octopus-code.org/down.php?file=10.4/octopus-10.4.tar.gz"
+    tar xf octopus.tar.gz
+    cd octopus-10.4
+    ./configure --with-libxc-prefix=/opt/libxc --prefix=/opt/octopus
+    make
+    make install
+
+%environment
+    export LC_ALL=C
+
+%runscript
+    /opt/octopus/bin/octopus $@
+
+%labels
+    Author radovan.bast@uit.no
