@@ -8,5 +8,8 @@ $ ./octopus.sif --help
 
 ---
 
-I have used this wonderful guide as starting point and inspiration:
-https://github.com/singularityhub/singularity-deploy
+### About this image
+
+- Please improve it! Contributions welcome!
+- I have used this wonderful guide as starting point and inspiration:
+  https://github.com/singularityhub/singularity-deploy
