@@ -1,2 +1,12 @@
-# singularity-octopus
-Singularity recipe for Octopus.
+# Singularity recipe for [Octopus](https://octopus-code.org)
+
+How to fetch and use the image:
+```
+$ singularity pull --name octopus.sif https://github.com/bast/singularity-octopus/releases/download/0.1.0/octopus-10.4.sif
+$ ./octopus.sif --help
+```
+
+---
+
+I have used this wonderful guide as starting point and inspiration:
+https://github.com/singularityhub/singularity-deploy
