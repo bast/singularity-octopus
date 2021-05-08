@@ -1,4 +1,4 @@
-# Singularity recipe for [Octopus](https://octopus-code.org)
+# [Singularity](https://sylabs.io/docs/) recipe for [Octopus](https://octopus-code.org)
 
 How to fetch and use the image:
 ```
